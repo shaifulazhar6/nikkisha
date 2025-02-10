@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff4d88;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .heart {
+            font-size: 80px;
+            color: #ff4d88;
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .message {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff4d88;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #ff3380;
+        }
+
+        .response {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #ff4d88;
+            font-weight: bold;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">💖</div>
+    <div class="message">Will you be my Valentines, Nikkisha?</div>
+    <div class="buttons">
+        <button onclick="showResponse('You made my heart so happy! 💘')">Yes! 💕</button>
+        <button onclick="showResponse('You are so sweet for saying that! 😍')">No but Yes! 😅</button>
+    </div>
+    <div id="response" class="response"></div>
+
+    <script>
+        function showResponse(message) {
+            document.getElementById('response').innerText = message;
+        }
+    </script>
+</body>
+</html>
